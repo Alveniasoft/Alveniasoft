@@ -10,12 +10,9 @@ export const metadata: Metadata = {
   title: "OSC BETS - Soccer Betting Insights",
   description: "Get accurate soccer betting insights and predictions from top betting sites",
   icons: {
-    icon: [
-      {
-        url: "/icon.png",
-        href: "/icon.png",
-      },
-    ],
+    icon: [{ url: "/favicon.png" }],
+    shortcut: ["/favicon.png"],
+    apple: [{ url: "/favicon.png" }],
   },
     generator: 'v0.dev'
 }
