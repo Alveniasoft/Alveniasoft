@@ -1,13 +1,31 @@
 "use client"
 
+import { useState } from "react"
 import { ArrowRight, TrendingUp } from "lucide-react"
 
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
+import { AnalysisDialog } from "@/components/analysis-dialog"
 
 export function TrendingBets() {
+  const [showAnalysis, setShowAnalysis] = useState(false)
+  const [analysisType, setAnalysisType] = useState<"player" | "team">("team")
+  const [analysisId, setAnalysisId] = useState<string>("")
+
+  const openTeamAnalysis = (team: string) => {
+    setAnalysisType("team")
+    setAnalysisId(team === "Arsenal" ? "t1" : "t2")
+    setShowAnalysis(true)
+  }
+
+  const openPlayerAnalysis = () => {
+    setAnalysisType("player")
+    setAnalysisId("p1")
+    setShowAnalysis(true)
+  }
+
   return (
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
       <Card className="cozy-shadow">
@@ -18,7 +36,7 @@ export function TrendingBets() {
             </Badge>
             <TrendingUp className="h-4 w-4 text-amber-500" />
           </div>
-          <CardTitle className="mt-2">Arsenal vs Man United</CardTitle>
+          <CardTitle className="mt-2 cursor-pointer hover:text-amber-600 transition-colors" onClick={() => openTeamAnalysis("Arsenal")}>Arsenal vs Man United</CardTitle>
           <CardDescription>Premier League • Today, 20:00</CardDescription>
         </CardHeader>
         <CardContent>
@@ -61,7 +79,7 @@ export function TrendingBets() {
           </div>
         </CardContent>
         <CardFooter>
-          <Button variant="outline" className="w-full">
+          <Button variant="outline" className="w-full" onClick={openPlayerAnalysis}>
             View Analysis
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
@@ -184,5 +202,12 @@ export function TrendingBets() {
         </CardFooter>
       </Card>
     </div>
+      <AnalysisDialog
+  \
+  type = { analysisType }
+  id = { analysisId }
+  isOpen = { showAnalysis }
+  onClose={() => setShowAnalysis(false)}
+      />
   )
 }

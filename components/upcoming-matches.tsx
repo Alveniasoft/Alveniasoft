@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
+import { AnalysisDialog } from "@/components/analysis-dialog"
 
 export function UpcomingMatches() {
   const [currentDate, setCurrentDate] = useState(new Date())
@@ -221,44 +222,72 @@ interface MatchRowProps {
 }
 
 function MatchRow({ time, homeTeam, awayTeam, homeOdds, drawOdds, awayOdds, valueBet }: MatchRowProps) {
+  const [showAnalysis, setShowAnalysis] = useState(false)
+  const [analysisType, setAnalysisType] = useState<"player" | "team">("team")
+  const [analysisId, setAnalysisId] = useState<string>("")
+
+  const openTeamAnalysis = (team: string) => {
+    setAnalysisType("team")
+    setAnalysisId(team === homeTeam ? "t1" : "t2")
+    setShowAnalysis(true)
+  }
+
   return (
-    <div className="px-4 py-3 flex items-center">
-      <div className="w-16 text-sm text-muted-foreground">{time}</div>
-      <div className="flex-1">
-        <div className="flex items-center justify-between">
-          <div className="font-medium">{homeTeam}</div>
-          <div className="text-sm text-muted-foreground">vs</div>
-          <div className="font-medium text-right">{awayTeam}</div>
+    <>
+      <div className="px-4 py-3 flex items-center">
+        <div className="w-16 text-sm text-muted-foreground">{time}</div>
+        <div className="flex-1">
+          <div className="flex items-center justify-between">
+            <div
+              className="font-medium cursor-pointer hover:text-amber-600 transition-colors"
+              onClick={() => openTeamAnalysis(homeTeam)}
+            >
+              {homeTeam}
+            </div>
+            <div className="text-sm text-muted-foreground">vs</div>
+            <div
+              className="font-medium text-right cursor-pointer hover:text-amber-600 transition-colors"
+              onClick={() => openTeamAnalysis(awayTeam)}
+            >
+              {awayTeam}
+            </div>
+          </div>
+        </div>
+        <div className="ml-6 flex items-center gap-2">
+          <Button
+            variant="outline"
+            size="sm"
+            className={`w-16 h-8 ${valueBet === "Home" ? "bg-green-50 border-green-200 text-green-700 hover:bg-green-100 hover:text-green-800" : ""}`}
+          >
+            {homeOdds}
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            className={`w-16 h-8 ${valueBet === "Draw" ? "bg-green-50 border-green-200 text-green-700 hover:bg-green-100 hover:text-green-800" : ""}`}
+          >
+            {drawOdds}
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            className={`w-16 h-8 ${valueBet === "Away" ? "bg-green-50 border-green-200 text-green-700 hover:bg-green-100 hover:text-green-800" : ""}`}
+          >
+            {awayOdds}
+          </Button>
+          {valueBet && (
+            <Badge variant="outline" className="bg-green-50 text-green-700 hover:bg-green-50">
+              Value
+            </Badge>
+          )}
         </div>
       </div>
-      <div className="ml-6 flex items-center gap-2">
-        <Button
-          variant="outline"
-          size="sm"
-          className={`w-16 h-8 ${valueBet === "Home" ? "bg-green-50 border-green-200 text-green-700 hover:bg-green-100 hover:text-green-800" : ""}`}
-        >
-          {homeOdds}
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          className={`w-16 h-8 ${valueBet === "Draw" ? "bg-green-50 border-green-200 text-green-700 hover:bg-green-100 hover:text-green-800" : ""}`}
-        >
-          {drawOdds}
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          className={`w-16 h-8 ${valueBet === "Away" ? "bg-green-50 border-green-200 text-green-700 hover:bg-green-100 hover:text-green-800" : ""}`}
-        >
-          {awayOdds}
-        </Button>
-        {valueBet && (
-          <Badge variant="outline" className="bg-green-50 text-green-700 hover:bg-green-50">
-            Value
-          </Badge>
-        )}
-      </div>
-    </div>
+      <AnalysisDialog
+        type={analysisType}
+        id={analysisId}
+        isOpen={showAnalysis}
+        onClose={() => setShowAnalysis(false)}
+      />
+    </>
   )
 }
