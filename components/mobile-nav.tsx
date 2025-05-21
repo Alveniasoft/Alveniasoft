@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { BarChart3, Home, LineChart, ListFilter, Trophy, Users } from "lucide-react"
+import { BarChart3, Home, LineChart, ListFilter, Target, Trophy, Users } from "lucide-react"
 import { Logo } from "@/components/logo"
 
 export function MobileNav() {
@@ -22,6 +22,13 @@ export function MobileNav() {
         >
           <Trophy className="h-5 w-5" />
           <span className="text-sm font-medium">Accuracy Rankings</span>
+        </Link>
+        <Link
+          href="/specialized-bets"
+          className="flex items-center gap-3 rounded-lg px-3 py-2 text-foreground transition-all hover:bg-accent"
+        >
+          <Target className="h-5 w-5" />
+          <span className="text-sm font-medium">Specialized Bets</span>
         </Link>
         <Link
           href="#"

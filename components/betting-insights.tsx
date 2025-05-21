@@ -10,6 +10,7 @@ import { BettingTable } from "@/components/betting-table"
 import { TrendingBets } from "@/components/trending-bets"
 import { ValueBets } from "@/components/value-bets"
 import { UpcomingMatches } from "@/components/upcoming-matches"
+import { SpecializedBetsBanner } from "@/components/specialized-bets-banner"
 
 export function BettingInsights() {
   const [isRefreshing, setIsRefreshing] = useState(false)
@@ -41,6 +42,9 @@ export function BettingInsights() {
           </Button>
         </div>
       </div>
+
+      {/* Add the specialized bets banner */}
+      <SpecializedBetsBanner />
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         <Card className="cozy-shadow">

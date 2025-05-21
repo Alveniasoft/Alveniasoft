@@ -32,14 +32,14 @@ export function SiteHeader() {
           <Link href="/accuracy" className="font-medium transition-colors hover:text-foreground/80">
             Accuracy Rankings
           </Link>
+          <Link href="/specialized-bets" className="font-medium transition-colors hover:text-foreground/80">
+            Specialized Bets
+          </Link>
           <Link href="#" className="font-medium text-muted-foreground transition-colors hover:text-foreground/80">
             Predictions
           </Link>
           <Link href="#" className="font-medium text-muted-foreground transition-colors hover:text-foreground/80">
             Leagues
-          </Link>
-          <Link href="#" className="font-medium text-muted-foreground transition-colors hover:text-foreground/80">
-            Bookmakers
           </Link>
         </nav>
         <div className="flex items-center ml-auto gap-2">
