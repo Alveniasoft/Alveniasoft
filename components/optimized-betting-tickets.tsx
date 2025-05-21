@@ -128,6 +128,20 @@ const bettingTickets: BettingTicket[] = [
           "PSG has won 9 of their last 10 home matches against Marseille. Their home xG is 2.7 vs Marseille's away xG of 1.2. PSG's key players are all fit while Marseille has 2 key defenders suspended.",
         time: "Sunday, 20:45",
       },
+      {
+        id: "bet16",
+        match: "Kaizer Chiefs vs Orlando Pirates",
+        league: "South African Premier Division",
+        prediction: "Under 2.5 Goals",
+        odds: 1.75,
+        probability: 65,
+        expectedValue: 1.14,
+        confidence: 72,
+        riskLevel: "Low",
+        reasoning:
+          "Historical data shows 70% of Soweto derbies have ended with under 2.5 goals. Both teams are showing defensive improvement with Kaizer Chiefs conceding only 0.9 goals per game and Orlando Pirates 1.0 goals per game in their last 5 matches.",
+        time: "Saturday, 15:00",
+      },
     ],
   },
   {
@@ -213,6 +227,20 @@ const bettingTickets: BettingTicket[] = [
         reasoning:
           "Both teams have scored in 80% of matches between these teams over the last 3 seasons. Both teams are averaging over 2 goals per game this season. The defensive metrics for both teams show vulnerability to conceding.",
         time: "Sunday, 15:45",
+      },
+      {
+        id: "bet17",
+        match: "Mamelodi Sundowns vs SuperSport United",
+        league: "South African Premier Division",
+        prediction: "Mamelodi Sundowns to Win",
+        odds: 1.85,
+        probability: 62,
+        expectedValue: 1.15,
+        confidence: 70,
+        riskLevel: "Medium",
+        reasoning:
+          "Mamelodi Sundowns has won 8 of their last 10 matches against SuperSport United. Their xG differential at home is +1.5 compared to SuperSport's away xG differential of -0.4. Sundowns' key performance indicators show strong form with 75% possession in recent matches.",
+        time: "Sunday, 14:30",
       },
     ],
   },
@@ -300,6 +328,120 @@ const bettingTickets: BettingTicket[] = [
           "Napoli's away form shows strong underlying metrics with an xG differential of +0.9. Milan is missing key midfielders. Tactical analysis shows Napoli's pressing will exploit Milan's current build-up vulnerabilities.",
         time: "Sunday, 20:45",
       },
+      {
+        id: "bet18",
+        match: "ZESCO United vs Nkana FC",
+        league: "Zambian Super League",
+        prediction: "ZESCO United to Win",
+        odds: 2.1,
+        probability: 55,
+        expectedValue: 1.16,
+        confidence: 68,
+        riskLevel: "Medium",
+        reasoning:
+          "ZESCO United has won 7 of their last 10 home matches. Their expected goals at home is 1.8 vs Nkana's away xG of 0.9. ZESCO's home advantage is particularly strong with a 70% win rate this season.",
+        time: "Saturday, 14:00",
+      },
+      {
+        id: "bet19",
+        match: "Dynamos FC vs Highlanders FC",
+        league: "Zimbabwean Premier Soccer League",
+        prediction: "Dynamos FC to Win or Draw",
+        odds: 1.6,
+        probability: 72,
+        expectedValue: 1.15,
+        confidence: 75,
+        riskLevel: "Low",
+        reasoning:
+          "Dynamos has not lost at home to Highlanders in their last 8 meetings. Their home xG is 1.7 vs Highlanders' away xG of 0.8. Dynamos has key players returning from injury which strengthens their midfield significantly.",
+        time: "Sunday, 15:00",
+      },
+    ],
+  },
+  {
+    id: "ticket4",
+    name: "Southern African Focus Ticket",
+    riskProfile: "Balanced",
+    winProbability: 22.4,
+    expectedReturn: 4.5,
+    totalOdds: 24.86,
+    riskAssessment:
+      "This ticket focuses exclusively on Southern African leagues, leveraging regional knowledge and market inefficiencies. These markets often have less efficient pricing due to lower betting volumes, creating value opportunities.",
+    recommendedStake: {
+      min: 5,
+      max: 25,
+    },
+    bets: [
+      {
+        id: "bet20",
+        match: "Kaizer Chiefs vs Orlando Pirates",
+        league: "South African Premier Division",
+        prediction: "Both Teams to Score",
+        odds: 1.95,
+        probability: 58,
+        expectedValue: 1.13,
+        confidence: 68,
+        riskLevel: "Medium",
+        reasoning:
+          "Both teams have scored in 65% of recent Soweto derbies. The rivalry tends to produce open games with both teams averaging 1.5+ goals per game in their last 5 matches. Both teams have scored in 70% of their respective matches this season.",
+        time: "Saturday, 15:00",
+      },
+      {
+        id: "bet21",
+        match: "Mamelodi Sundowns vs SuperSport United",
+        league: "South African Premier Division",
+        prediction: "Over 2.5 Goals",
+        odds: 2.1,
+        probability: 55,
+        expectedValue: 1.16,
+        confidence: 65,
+        riskLevel: "Medium",
+        reasoning:
+          "Matches between these teams have averaged 2.8 goals in the last 10 meetings. Mamelodi Sundowns is averaging 2.2 goals per game while SuperSport is scoring 1.4 goals per game. Expected goals models predict 2.9 total goals for this fixture.",
+        time: "Sunday, 14:30",
+      },
+      {
+        id: "bet22",
+        match: "ZESCO United vs Nkana FC",
+        league: "Zambian Super League",
+        prediction: "ZESCO United -1 Handicap",
+        odds: 3.2,
+        probability: 35,
+        expectedValue: 1.12,
+        confidence: 60,
+        riskLevel: "High",
+        reasoning:
+          "ZESCO United has won by 2+ goals in 5 of their last 8 home matches. Their attacking metrics show they create 2.3 expected goals per home game while Nkana concedes 1.8 expected goals per away game. ZESCO's home form has been particularly strong this season.",
+        time: "Saturday, 14:00",
+      },
+      {
+        id: "bet23",
+        match: "Dynamos FC vs Highlanders FC",
+        league: "Zimbabwean Premier Soccer League",
+        prediction: "Under 2.5 Goals",
+        odds: 1.7,
+        probability: 68,
+        expectedValue: 1.16,
+        confidence: 75,
+        riskLevel: "Low",
+        reasoning:
+          "8 of the last 10 matches between these teams have had under 2.5 goals. Both teams have strong defensive metrics with Dynamos conceding 0.8 goals per game and Highlanders 1.0. Tactical analysis suggests a cautious approach from both sides in this rivalry match.",
+        time: "Sunday, 15:00",
+      },
+      {
+        id: "bet24",
+        match: "TS Galaxy vs AmaZulu FC",
+        league: "South African Premier Division",
+        prediction: "Draw",
+        odds: 3.1,
+        probability: 36,
+        expectedValue: 1.12,
+        confidence: 62,
+        riskLevel: "Medium",
+        reasoning:
+          "4 of the last 7 matches between these evenly matched teams have ended in draws. Both teams have similar xG differentials and are separated by just 3 points in the league. Their head-to-head record shows a tendency for tight, low-scoring matches.",
+        time: "Saturday, 16:00",
+      },
     ],
   },
 ]
@@ -359,10 +501,11 @@ export function OptimizedBettingTickets() {
       </div>
 
       <Tabs value={activeTicket} onValueChange={setActiveTicket}>
-        <TabsList className="grid w-full grid-cols-3">
+        <TabsList className="grid w-full grid-cols-4">
           <TabsTrigger value="ticket1">Conservative</TabsTrigger>
           <TabsTrigger value="ticket2">Balanced</TabsTrigger>
           <TabsTrigger value="ticket3">Aggressive</TabsTrigger>
+          <TabsTrigger value="ticket4">Southern African</TabsTrigger>
         </TabsList>
 
         {bettingTickets.map((ticket) => (

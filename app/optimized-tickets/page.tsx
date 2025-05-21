@@ -1,6 +1,11 @@
 import { SiteHeader } from "@/components/site-header"
 import { OptimizedBettingTickets } from "@/components/optimized-betting-tickets"
 
+export const metadata = {
+  title: "Optimized Betting Tickets | OSC BETS",
+  description: "Data-driven betting combinations with positive expected value, including Southern African leagues",
+}
+
 export default function OptimizedTicketsPage() {
   return (
     <div className="min-h-screen flex flex-col">
